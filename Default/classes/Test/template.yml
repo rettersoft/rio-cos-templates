@@ -1,0 +1,10 @@
+preAuthorizer: index.preAuthorizer
+init: index.init
+getState: index.getState
+methods:
+  - method: sayHello
+    tag: test
+    sync: true
+    steps:
+      - id: default
+        handler: index.sayHello
