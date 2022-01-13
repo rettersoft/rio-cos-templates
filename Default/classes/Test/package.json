@@ -1,5 +1,5 @@
 {
-  "name": "Test",
+  "name": "test",
   "version": "1.0.0",
   "dependencies": {
     "@retter/rdk": "1.0.7"
