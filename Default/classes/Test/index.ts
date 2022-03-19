@@ -2,7 +2,7 @@ import RDK, { Data, InitResponse, Response, StepResponse } from "@retter/rdk";
 
 const rdk = new RDK();
 
-export async function preAuthorizer(data: Data): Promise<Response> {
+export async function authorizer(data: Data): Promise<Response> {
     return { statusCode: 200 };
 }
 
