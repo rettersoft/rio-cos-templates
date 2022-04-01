@@ -17,7 +17,7 @@ export async function getState(data: Data): Promise<Response> {
     return { statusCode: 200, body: data.state };
 }
 
-export async function sayHello(data: Data): Promise<StepResponse> {
+export async function sayHello(data: Data): Promise<Data> {
     data.response = {
         statusCode: 200,
         body: { message: data.state.public.message },
