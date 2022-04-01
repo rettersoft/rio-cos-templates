@@ -6,8 +6,11 @@ export async function authorizer(data: Data): Promise<Response> {
     return { statusCode: 200 };
 }
 
-export async function init(data: Data): Promise<InitResponse> {
-    return { state: { public: { message: "Hello World" } } };
+export async function init(data: Data): Promise<Data> {
+    data.state.public = {
+        message: "Hello World"
+    }
+    return data
 }
 
 export async function getState(data: Data): Promise<Response> {
