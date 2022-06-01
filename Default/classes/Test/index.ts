@@ -3,7 +3,7 @@ import RDK, { Data, InitResponse, Response, StepResponse } from "@retter/rdk";
 const rdk = new RDK();
 
 export async function authorizer(data: Data): Promise<Response> {
-    return { statusCode: 200 };
+    return { statusCode: 401 };
 }
 
 export async function init(data: Data): Promise<Data> {
