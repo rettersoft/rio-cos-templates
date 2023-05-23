@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@retter/rdk": "1.1.15"
+  },
   "devDependencies": {
     "@types/node": "14.17.2"
   }

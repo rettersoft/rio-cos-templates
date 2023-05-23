@@ -1,4 +1,4 @@
-import RDK, { Data, InitResponse, Response, StepResponse } from "@retter/rdk";
+import RDK, { Data, Response } from "@retter/rdk";
 
 const rdk = new RDK();
 
