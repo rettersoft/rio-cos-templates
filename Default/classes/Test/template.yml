@@ -1,6 +1,0 @@
-init: index.init
-getState: index.getState
-methods:
-  - method: sayHello
-    type: WRITE
-    handler: index.sayHello
