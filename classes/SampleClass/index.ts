@@ -22,19 +22,20 @@ export async function getState(data: Data): Promise<Response> {
     };
 }
 
-export async function setState(data: Data): Promise<Response> {
+export async function setState(data: Data): Promise<Data> {
     const { state, version } = data.request.body || {};
-    if (data.version !== version) {
-        return {
+    if (data.version === version) {
+        data.state = state;
+        data.response = { statusCode: 204 };
+    } else {
+        data.response = {
             statusCode: 409,
             body: {
                 message: `Your state version (${version}) is behind the current version (${data.version}).`,
             },
-        };
+        }
     }
-
-    data.state = state;
-    return { statusCode: 204 };
+    return data;
 }
 
 export async function sayHello(data: Data): Promise<Data> {
