@@ -23,24 +23,6 @@ npm install pm2 -g
 echo "pm2 version: "
 pm2 -v
 
-echo "installing docker"
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-rm -f get-docker.sh
-sudo usermod -aG docker ${USER}
-echo "docker version: "
-docker -v
-
-
-echo "installing unzip"
-sudo apt install -y unzip
-
-echo "installing aws cli"
-curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip"
-unzip -q awscliv2.zip
-sudo ./aws/install
-
-
 echo "getting source"
 AWS_ACCESS_KEY_ID=$accessKeyId AWS_SECRET_ACCESS_KEY=$secretAccessKey AWS_DEFAULT_REGION=$region aws s3api get-object --bucket rio-deployer-$stage --key releases/rio_project_deployer.zip "rio_project_deployer.zip"
 unzip -q -d rio_project_deployer rio_project_deployer.zip
