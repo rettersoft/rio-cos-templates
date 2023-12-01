@@ -32,6 +32,8 @@ cd rio_project_deployer
 sed -e "s/{{ACCESS_KEY_ID}}/$accessKeyId/g" -e "s/{{SECRET_ACCESS_KEY}}/$secretAccessKey/g" -e "s/{{REGION}}/$region/g" -e "s/{{STAGE}}/$stage/g" "ecosystem.config.js" > "temp_ecosystem.config.js"
 mv temp_ecosystem.config.js ecosystem.config.js
 
+npm i @swc/cli @swc/core --silent --save-dev
+
 echo "starting pm2"
 #TODO! pm2 startup
 pm2 start ecosystem.config.js
