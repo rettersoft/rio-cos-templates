@@ -34,6 +34,8 @@ mv temp_ecosystem.config.js ecosystem.config.js
 
 npm i @swc/cli @swc/core --silent --save-dev
 
+cp package.json dist/.
+
 echo "starting pm2"
 #TODO! pm2 startup
 pm2 start ecosystem.config.js
