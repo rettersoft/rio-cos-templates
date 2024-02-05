@@ -16,7 +16,7 @@ echo "nvm version: "
 nvm -v
 
 echo "installing node"
-nvm install 16.20.2
+nvm install 20.11.0
 echo "node version: "
 node -v
 
