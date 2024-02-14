@@ -1,7 +1,5 @@
 #! /bin/bash
 
-set -e
-
 cd ~
 pwd
 whoami
@@ -16,7 +14,7 @@ echo "nvm version: "
 nvm -v
 
 echo "installing node"
-nvm install 20.11.0
+nvm install 16
 echo "node version: "
 node -v
 
@@ -31,14 +29,13 @@ unzip -q -d rio_project_deployer rio_project_deployer.zip
 
 echo "configuring pm2"
 cd rio_project_deployer
-sed -e "s/{{ACCESS_KEY_ID}}/$accessKeyId/g" -e "s/{{SECRET_ACCESS_KEY}}/$secretAccessKey/g" -e "s/{{REGION}}/$region/g" -e "s/{{STAGE}}/$stage/g" "ecosystem.config.js" > "temp_ecosystem.config.js"
+sed -e "s/{{ACCESS_KEY_ID}}/$accessKeyId/g" -e "s/{{SECRET_ACCESS_KEY}}/$secretAccessKey/g" -e "s/{{REGION}}/$region/g" -e "s/{{STAGE}}/$stage/g" -e "s/{{MONITOR_API_KEY}}/$apiKey/g" "ecosystem.config.js" > "temp_ecosystem.config.js"
 mv temp_ecosystem.config.js ecosystem.config.js
 
-npm i @swc/cli @swc/core --silent --save-dev
-
-cp package.json dist/.
-
 echo "starting pm2"
-pm2 startup | bash
+#TODO! pm2 startup
 pm2 start ecosystem.config.js
-pm2 save
+#TODO! pm2 save
+
+# This file is committed to the following url
+# https://raw.githubusercontent.com/rettersoft/rio-cos-templates/main/ec2-deployer-init.sh
