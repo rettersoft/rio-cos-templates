@@ -21,7 +21,7 @@ echo "node version: "
 node -v
 
 echo "installing pm2"
-npm install pm2 -g
+npm install pm2@6.0.8 -g
 echo "pm2 version: "
 pm2 -v
 
